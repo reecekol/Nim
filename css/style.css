@@ -1,0 +1,53 @@
+      .stone{
+		  background-color:red;
+		  border-radius:200px;
+		  height:100px;
+		  width:100px;
+		  margin:40px;
+		  float:left;
+		}
+		
+		h3{
+		 text-align:center;
+		 color:white;
+		 font-size:24px;
+		}
+		
+		button {
+		
+		 clear:both;
+		 display:block;
+		}
+		
+		.selected{
+		 background-color:green;
+		}
+		
+		body{
+		  background-color:#6699FF;
+		}
+		
+		button{
+		  background-color:#006600;
+		  color:white;
+		  border:0px;
+		  outline:none;
+		  padding:10px;
+		  border-radius:10px;
+		  font-size:20px;
+		  margin-left:50px;
+		  position:absolute;
+		  bottom:100px;
+		}
+		
+		#turn{
+		 width:200px;
+		 float:right;
+		 color:red;
+		 font-size:26px;
+		 font-weight:bold;
+		}
+		
+		#container{
+		  margin-top:60px;
+		}

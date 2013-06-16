@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+  <head>
+     <title> </title>
+	 
+	 <style>
+	    .stone{
+		  background-color:red;
+		  border-radius:200px;
+		  height:100px;
+		  width:100px;
+		  margin:40px;
+		  float:left;
+		}
+		
+		h3{
+		 text-align:center;
+		 color:white;
+		 font-size:24px;
+		}
+		
+		button {
+		
+		 clear:both;
+		 display:block;
+		}
+		
+		.selected{
+		 background-color:green;
+		}
+		
+		body{
+		  background-color:#6699FF;
+		}
+		
+		button{
+		  background-color:#006600;
+		  color:white;
+		  border:0px;
+		  outline:none;
+		  padding:10px;
+		  border-radius:10px;
+		  font-size:20px;
+		  margin-left:50px;
+		  position:absolute;
+		  bottom:100px;
+		}
+		
+		#turn{
+		 width:200px;
+		 float:right;
+		 color:red;
+		 font-size:26px;
+		 font-weight:bold;
+		}
+		
+		#container{
+		  margin-top:60px;
+		}
+	 </style>
+	 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	 <script>
+	  
+	   
+	   $(document).ready(function(){
+	        
+			var numStones=10;
+	        var playerTurn=1;
+			 
+			 //updateplayerTurn();
+			 		
+			function hideStones(){
+			  $("div.selected").hide(200);
+			  
+  
+			}
+		  
+		  $(".stone").click(function(){
+		  
+		    $(this).addClass("selected");
+		     
+			 
+		  })
+		  
+		  function updateplayerTurn(){
+		   
+		   var msg;
+		   if(playerTurn===1)
+		   {
+		    msg="Player 1";
+			playerTurn=2;
+		   }
+		   else{
+		   
+		    msg="Computer ";
+			playerTurn=1;
+			
+		   }
+		      $("#turn").text( msg+"Turn ")
+		  
+		  }
+	       
+		 $("button").click(function(){
+		   
+		   
+		   
+			  hideStones()
+		      var numselectedStones=$("div.selected").length;
+		      numStones=numStones-numselectedStones;
+		      playerTurn=2;			
+			  getComputerMove();
+			 
+
+			
+		   
+		  // updateplayerTurn()
+		 });
+		 
+		 
+		 function getComputerMove(){		 
+			 var selectedStones
+			 if(numStones>4)
+			 {
+			   selectedStones=numStones%4;
+			 }
+			 else{
+			 
+			  selectedStones=numStones;
+			  
+		     }
+			 
+			 
+			 $(".stone").each(function(index,element){
+			   
+			    if(index>3){
+				 
+				 return false;
+				} 
+				else{
+				
+				 window.setTimeout(function(){
+				 
+				   $(element).addClass("selected");
+				   },2000);
+				}
+			   
+			 });
+			 
+			 hideStones();
+		 }
+		 
+		 
+		 
+	   });
+	   
+	   
+	 </script>
+	  
+  </head>
+  <body>
+     <h3>Nim.js By Kole Reece </h3>
+	 <div id="turn"> </div>
+	 <div id="container">
+     <div class="stone"> </div>
+	 <div class="stone"> </div>
+	 <div class="stone"> </div>
+	 <div class="stone"> </div>
+	 <div class="stone"> </div>
+	 <div class="stone"> </div>
+	 <div class="stone"> </div>
+	 <div class="stone"> </div>
+	 <div class="stone"> </div>
+	 <div class="stone"> </div>
+	 </div>
+	 <button>Remove Stones</button>
+  </body>
+</html>
