@@ -6,118 +6,13 @@
 	  <link href="css/style.css" rel="stylesheet" type="text/css"> </link>
 	 
 	 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	 <script>
-	  
-	   
-	   $(document).ready(function(){
-	        
-			var numStones=15;
-	        var playerTurn=1;
-	 		
-			var numSelectedStones;
-			
-			
-			var delay=200;
-			
-			 //handle selecting stones
-			
-			 $(".stone").click(function(){
-		       
-			   numSelectedStones=$(".selected").length;
-			   
-			    numStones=numStones-1;
-		       if (checkValidMove()){
-		         $(this).addClass("selected");
-		        }
-			 })
-			
-			$("button").click(function(){
-		      
-			  
-			   hideStones();
-			   checkForWin();
-			   getComputerMove();      		  
-		     
-		 });
-			
-			
-			
-			function checkValidMove(){
-			
-			  if(numSelectedStones>=3)
-			  {
-			    return false;
-			  }
-			 
-			  return true;
-			}
-				
-			
-			function hideStones(){
-			  $("div.selected").removeClass("selected").hide(200);
-			   numStones= numStones-$("div.selected").length;
-			}
-			
-			function checkForWin(){
-			 if(numStones===0)
-			 {
-			   alert("X wond");
-			 }
-			
-			}
-			
-			
-
-		 
-		 function getComputerMove(){		 
-			
-		    
-			if(numStones>4)
-			{
-			  selectedStones=numStones%4;
-			}
-			else{
-			  selectedStones=numStones;
-			}
-			 
-			numStones-=selectedStones;
-			 
-			 
-			
-			$(".stone").each(function(i,element){
-			  
-			   delay=delay+500;
-			   
-			   if(i===4)
-			   {
-			     return false;
-			   }
-               window.setTimeout(function(){
-			  
-			   $(element).addClass("selected");
-			   
-			  },2000);
-			
-			
-			 window.setTimeout(function(){
-			  
-			    hideStones();
-			   
-			  },5000);
-			  
-			});
-			 
-		 }
-		  
-	   });
-	   
-	   
+	 <script>  
 	 </script>
 	  
   </head>
   <body>
      <h3>Nim.js By Kole Reece </h3>
-	 <div id="turn"> </div>
+	 <div id="turn">Player Turn</div>
 	 <div id="container">
      <div class="stone"> </div>
 	 <div class="stone"> </div>
