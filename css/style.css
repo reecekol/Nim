@@ -51,3 +51,7 @@
 		#container{
 		  margin-top:60px;
 		}
+		
+		.hidden{
+		  display:none;
+		}
