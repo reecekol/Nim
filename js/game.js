@@ -1,41 +1,45 @@
 $(document).ready(function(){
 	        
-			var numStones=15;
-	        var playerTurn=1;
+	var numStones=15;
+	var playerTurn=1;
 	 		
-			var numSelectedStones;
+        var numSelectedStones;
 			
 			
-			var delay=200;
+	var delay=200;
 			
-			 //handle selecting stones
 			
-			 $(".stone").click(function(){
+       //handle selecting stones
+			
+       $(".stone").click(function(){
 		       
-			   numSelectedStones=$(".selected").length;
+		   numSelectedStones=$(".selected").length;
 			   
-			    numStones=numStones-1;
-		       if (checkValidMove()){
+		   numStones=numStones-1;
+
+		   if (checkValidMove()){
+
 		         $(this).addClass("selected");
-		        }
-			 })
+
+		      }
+		   })
 			
-			$("button").click(function(){
+		   $("button").click(function(){
 		      
 			  
-			   hideStones();
+		      hideStones();
 			   
-			   //updatePlayerTurn();
-			   checkForWin();
+	            //updatePlayerTurn();
+		      checkForWin();
 			   
-			   getComputerMove();      		  
+		      getComputerMove();      		  
 		      // updatePlayerTurn();
-			   checkForWin();
+		      checkForWin();
 		 });
 			
 			
 			
-			function checkValidMove(){
+		 function checkValidMove(){
 			
 			  if(numSelectedStones>=3)
 			  {
@@ -46,18 +50,22 @@ $(document).ready(function(){
 			}
 				
 			
-			function hideStones(){
-			  $("div.selected").removeClass("selected").hide(200);
-			   numStones= numStones-$("div.selected").length;
-			}
+		 function hideStones(){
+			  
+                         $("div.selected").removeClass("selected").hide(200);
+
+			 numStones= numStones-$("div.selected").length;
+
+		 }
 			
-			function checkForWin(){
+		function checkForWin(){
+
 			 if(numStones===0)
 			 {
 			   alert(PlayerTurn+ " Won ");
 			 }
 			
-			}
+		}
 			
 			
 
@@ -86,7 +94,7 @@ $(document).ready(function(){
 			     return false;
 			   }
 			   
-               window.setTimeout(function(){
+                  window.setTimeout(function(){
 			  
 			   $(element).addClass("selected");
 			   
@@ -116,9 +124,9 @@ $(document).ready(function(){
 
               else if(playerTurn===2){
                 
-				playerTurn=1;
+		   playerTurn=1;
  
                }			   
 			 
-			 }
-	   });
+ 	  }
+     });
