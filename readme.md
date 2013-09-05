@@ -1,0 +1,1 @@
+this is my attempt to implement the game  <a href="http://en.wikipedia.org/wiki/Nim">Nim</a>
