@@ -58,7 +58,7 @@ $(document).ready(function(){
 
 		 }
 			
-		function checkForWin(){
+		 function checkForWin(){
 
 			 if(numStones===0)
 			 {
@@ -94,9 +94,9 @@ $(document).ready(function(){
 			     return false;
 			   }
 			   
-                  window.setTimeout(function(){
+                         window.setTimeout(function(){
 			  
-			   $(element).addClass("selected");
+			    $(element).addClass("selected");
 			   
 			  },1000);
 			
@@ -116,17 +116,16 @@ $(document).ready(function(){
 		  
 		   function updatePlayerTurn(){
 			   
-			   if(playerTurn===1){
+		    if(playerTurn===1){
 			      
-				  playerTurn=2;
+			playerTurn=2;
 
-                }
+                     }
 
-              else if(playerTurn===2){
-                
-		   playerTurn=1;
+                   else if(playerTurn===2){
+		   
+                     playerTurn=1;
  
-               }			   
-			 
- 	  }
+                    }			   
+	          }
      });
